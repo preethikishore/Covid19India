@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="virus">&#xf974;</string>
+    <string name="active">&#xf967;</string>
+    <string name="recovered">&#xf604;</string>
+    <string name="skull">&#xf714;</string>
+    <string name="test">&#xf492;</string>
+    <string name="cpm">&#xf976;</string>
+    <string name="location">&#xf043;</string>
+    <string name="city">&#xf64f;</string>
+    <string name="country">&#xf024;</string>
+    <string name="globe">&#xf0ac;</string>
+    <string name="handwash">&#xf95e;</string>
+    <string name="handshake">&#xf95f;</string>
+    <string name="increase">&#xf102;</string>
+    <string name="bookmark">&#xf022;</string>
+    <string name="child">&#xf1ae;</string>
+    <string name="leftarrow">&#xf359;</string>
+    <string name="rightarrow">&#xf35a;</string>
+</resources>

@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="utf-8"?><!--Constraint Layout Main-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#673AB7"
+    tools:context="com.allureinfosystems.covid19india.MainActivity">
+    <!--Relative Layout Maim-->
+
+    <RelativeLayout
+        android:id="@+id/mainRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/coronabgone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!--Linear Layout Header-->
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+                    <!--Header Image-->
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="center"
+                        android:background="@drawable/stayhome"
+                        android:gravity="start"
+                        android:padding="4dp" />
+
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/cormorant_infant_light"
+                        android:gravity="start"
+                        android:padding="4dp"
+                        android:text="Covid 19"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="true"
+                        android:textColor="#FFFFFF"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+
+
+                    <ImageButton
+                        android:id="@+id/imageButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="end"
+                        android:background="#11FFFFFF"
+                        android:onClick="showPopup"
+                        app:srcCompat="@drawable/menu" />
+
+
+                </RelativeLayout>
+                <!-- End of Header Linear Layout-->
+                <!--District Text-->
+
+                <TextView
+                    android:id="@+id/textLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="Location"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textZone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="District Zone"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+                <!--Linear Layout District Details-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <!--District Confirmed Linear Layout-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#3CF1EBF1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.allureinfosystems.covid19india.IconTextView
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/virus"
+                            android:textColor="#526BFA" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Confirmed"
+                            android:textColor="#526BFA"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/locationConfirmed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#526BFA"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.allureinfosystems.covid19india.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="@string/increase"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp" />
+
+                            <Space
+                                android:layout_width="4dp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/lConfirmedIncr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="0"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content" />
+                    <!--District Active Linear Layout-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#3CF1EBF1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.allureinfosystems.covid19india.IconTextView
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/active"
+                            android:textColor="#FF0000" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Active"
+                            android:textColor="#FF0000"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/locationActive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#FF0000"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.allureinfosystems.covid19india.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="@string/increase"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp" />
+
+                            <Space
+                                android:layout_width="4dp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/lActiveIncr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="0"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content" />
+                    <!--District Recovered Linear Layout-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#3CF1EBF1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.allureinfosystems.covid19india.IconTextView
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/recovered"
+                            android:textColor="#00FF00" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="5dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Recovered"
+                            android:textColor="#00FF00"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/locationRecovered"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#00FF00"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.allureinfosystems.covid19india.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="@string/increase"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp" />
+
+                            <Space
+                                android:layout_width="4dp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/lRecoveredIncr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="0"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content" />
+                    <!--District Deceased Linear Layout-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#3CF1EBF1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.allureinfosystems.covid19india.IconTextView
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/skull"
+                            android:textColor="#E3CE12" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Deceased"
+                            android:textColor="#E3CE12"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/locationDeceased"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#E3CE12"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.allureinfosystems.covid19india.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="@string/increase"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp" />
+
+                            <Space
+                                android:layout_width="4dp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/lDeceasedIncr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="0"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <!--End of District Details-->
+                <!--Recycler View Districts-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/my_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal" />
+                <!--State Text View-->
+                <TextView
+                    android:id="@+id/textViewState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="State"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+                <!--Linear Layout State Level Details-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <!--State Confirmed Linear Layout-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#3CF1EBF1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.allureinfosystems.covid19india.IconTextView
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/virus"
+                            android:textColor="#526BFA" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Confirmed"
+                            android:textColor="#526BFA"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/stateConfirmed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#526BFA"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.allureinfosystems.covid19india.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="@string/increase"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp" />
+
+                            <Space
+                                android:layout_width="4dp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/sConfirmedIncr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="0"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content" />
+                    <!--State Active Linear Layout-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#3CF1EBF1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.allureinfosystems.covid19india.IconTextView
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/active"
+                            android:textColor="#FF0000" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Active"
+                            android:textColor="#FF0000"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/stateActive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#FF0000"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.allureinfosystems.covid19india.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="@string/increase"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp" />
+
+                            <Space
+                                android:layout_width="4dp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/sActiveIncr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="0"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content" />
+                    <!--State Recovered Linear Layout-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#3CF1EBF1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.allureinfosystems.covid19india.IconTextView
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/recovered"
+                            android:textColor="#00FF00" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Recovered"
+                            android:textColor="#00FF00"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/stateRecovered"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#00FF00"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.allureinfosystems.covid19india.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="@string/increase"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp" />
+
+                            <Space
+                                android:layout_width="4dp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/sRecoveredIncr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="0"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content" />
+                    <!--State Deceased Linear Layout-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#3CF1EBF1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.allureinfosystems.covid19india.IconTextView
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/skull"
+                            android:textColor="#E3CE12" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Deceased"
+                            android:textColor="#E3CE12"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/stateDeceased"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#E3CE12"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.allureinfosystems.covid19india.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="@string/increase"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp" />
+
+                            <Space
+                                android:layout_width="4dp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/sDeceasedIncr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="4dp"
+                                android:text="0"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <!--End Of State Level Details-->
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp" />
+                <!--Linear Layout State Level Statistics-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#3CF1EBF1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <!--State Level CPM-->
+
+                    <Space
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content" />
+                    <!--PieChart-->
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/idPieChart"
+                        android:layout_width="150dp"
+                        android:layout_height="125dp"
+                        android:layout_gravity="center"
+                        android:padding="4dp"></com.github.mikephil.charting.charts.PieChart>
+
+                    <Space
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <!--State Level CPM-->
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#3CF1EBF1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.allureinfosystems.covid19india.IconTextView
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/cpm"
+                            android:textColor="#526BFA" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CPM"
+                            android:textColor="#526BFA"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/stateConfPMill"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#526BFA"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="4dp" />
+
+                    <Space
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content" />
+                    <!--State Level TPM-->
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#3CF1EBF1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.allureinfosystems.covid19india.IconTextView
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/test"
+                            android:textColor="#526BFA" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tests/Million"
+                            android:textColor="#526BFA"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/stateTestPMill"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#526BFA"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+                <!--End of State Level Statistics-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+                    <!--Header Image-->
+
+                    <Space
+                        android:layout_width="3dp"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:background="#3CF1EBF1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.allureinfosystems.covid19india.IconTextView
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/leftarrow"
+                            android:textColor="#FFFFFF" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="4dp" />
+
+                        <Button
+                            android:id="@+id/buttonglobal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#0A42109D"
+                            android:text="Globel Data"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                    <Button
+
+                        android:id="@+id/buttonrefresh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/refresh"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text="Refresh"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <Space
+                        android:layout_width="3dp"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="#3CF1EBF1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <com.allureinfosystems.covid19india.IconTextView
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/rightarrow"
+                            android:textColor="#FFFFFF" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="4dp" />
+
+                        <Button
+                            android:id="@+id/buttonnation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#0A47179D"
+                            android:text="National Data"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+        <!--Linear Layout Main-->
+
+        <!--End of Main Linear Layout-->
+    </RelativeLayout>
+    <!--End of Main Relative Layout-->
+</androidx.constraintlayout.widget.ConstraintLayout><!--End of Main Constraint Layout-->

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Covid19 India</string>
+    <string name="checkInternetConnection">Check Your Internet Connection</string>
+</resources>
